@@ -1,0 +1,39 @@
+# CONFIG FILE FOR TMUX 2.1<
+
+
+set -g default-terminal "screen-256color"
+
+####### VISUAL SECTION
+
+# tmux coloring
+# Set the status line's colors
+set -g status-fg colour0
+set -g status-bg colour248
+
+# Active Pane Colors
+set -g window-style "bg=colour241, fg=colour253"
+set -g window-active-style "bg=colour235, fg=colour253"
+setw -g window-status-current-style "fg=colour234,bold,bg=colour253"
+
+####### END VISIAL SECTION
+
+
+
+####### MOUSE SECTION
+######## END MOUSE SECTION
+
+
+
+####### BEHAVIORAL SECTION
+
+set -g history-limit 10000
+setw -g mode-keys vi
+
+bind-key -T copy-mode-vi v send-keys -X begin-selection
+bind-key -T copy-mode-vi y send-keys -X copy-selection
+bind-key -T copy-mode-vi r send-keys -X rectangle-toggle
+
+####### END BEHAVIORAL SECTION
+
+#### Color Scheme
+#GruvBox

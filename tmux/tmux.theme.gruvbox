@@ -1,43 +1,53 @@
-# CONFIG FILE FOR TMUX 2.1<
 
+GRUVBOX_DARK_0_BG="#282828"
+GRUVBOX_DARK_8_GRAY="#928374"
 
-set -g default-terminal "screen-256color"
+GRUVBOX_DARK_1_DARK_RED="#cc241d"
+GRUVBOX_DARK_9_LIGHT_RED="#fb4934"
 
-####### VISUAL SECTION
+GRUVBOX_DARK_2_DARK_GREEN="#98971a"
+GRUVBOX_DARK_10_LIGHT_GREEN="#b8bb26"
 
-# tmux coloring
-# Set the status line's colors
-set -g status-fg colour0
-set -g status-bg colour248
+GRUVBOX_DARK_3_DARK_YELLOW="#d79921"
+GRUVBOX_DARK_11_LIGHT_YELLOW="#fabd2f"
 
-# Active Pane Colors
-set -g window-style "bg=colour241, fg=colour253"
-set -g window-active-style "bg=colour235, fg=colour253"
-setw -g window-status-current-style "fg=colour234,bold,bg=colour253"
+GRUVBOX_DARK_4_DARK_BLUE="#458588"
+GRUVBOX_DARK_12_LIGHT_BLUE="#83a598"
 
-####### END VISIAL SECTION
+GRUVBOX_DARK_5_DARK_PURPLE="#b16286"
+GRUVBOX_DARK_13_LIGHT_PURPLE="#d3869b"
 
+GRUVBOX_DARK_6_DARK_AQUA="#689d6a"
+GRUVBOX_DARK_14_LIGHT_AQUA="#8ec07c"
 
+GRUVBOX_DARK_7_GRAY="#a89984"
+GRUVBOX_DARK_15_FG="#ebdbb2"
 
-####### BEHAVIORAL SECTION
+GRUVBOX_DARK_BG0_H="#1d2021"
 
-set -g history-limit 10000
-setw -g mode-keys vi
-####### END BEHAVIORAL SECTION
+GRUVBOX_DARK_BG0="#282828"
+GRUVBOX_DARK_BG0_S="#32302f"
 
+GRUVBOX_DARK_BG1="#3c3836"
+GRUVBOX_DARK_FG4="#a89984"
 
+GRUVBOX_DARK_BG2="#504945"
+GRUVBOX_DARK_FG3="#bdae93"
 
-####### MOUSE SECTION
+GRUVBOX_DARK_BG3="#665c54"
+GRUVBOX_DARK_FG2="#d5c4a1"
 
-set -g mouse on
+GRUVBOX_DARK_BG4="#7c6f64"
+GRUVBOX_DARK_FG1="#ebdbb2"
 
-# Mouse Wheel - works in vim changes to copy mode automatically in terminal and exits it when you reach the bottom still allows you to use your mousewheel in man, less and journalctl.
-bind -n WheelUpPane if -t = "test $(echo #{pane_current_command} |grep -e 'man' -e 'less' -e 'journalctl')" "select-pane -t = ; send-keys Up Up Up Up"  "if-shell -F -t = '#{?mouse_any_flag,1,#{pane_in_mode}}' 'send-keys -M' 'select-pane -t = ; copy-mode -e; send-keys -M'"
-bind -n WheelDownPane if -t = "test $(echo #{pane_current_command} |grep -e 'man' -e 'less' -e 'journalctl')" "select-pane -t = ; send-keys Down Down Down Down"  "if-shell -F -t = '#{?mouse_any_flag,1,#{pane_in_mode}}' 'send-keys -M' 'select-pane -t = ; copy-mode -e; send-keys -M'"
+GRUVBOX_DARK_GRAY="#928374"
+GRUVBOX_DARK_FG0="#fbf1c7"
 
-######## END MOUSE SECTION
+GRUVBOX_DARK_DARK_ORANGE="#d65d0e"
+GRUVBOX_DARK_LIGHT_ORANGE="#fe8019"
 
-## COLORSCHEME: gruvbox dark
+ # 2}}}
+# COLORSCHEME: gruvbox dark
 set-option -g status "on"
 
 # default statusbar colors
