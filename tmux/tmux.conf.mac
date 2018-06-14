@@ -8,5 +8,4 @@ set -g default-terminal "xterm-256color"
 # Apply Tc
 set-option -ga terminal-overrides ",xterm-256color:Tc"
 
-source $HOME/.dotfiles/powerline/powerline/bindings/tmux/powerline.conf
 

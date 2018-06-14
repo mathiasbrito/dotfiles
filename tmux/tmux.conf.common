@@ -3,20 +3,6 @@
 
 set -g default-terminal "screen-256color"
 
-####### VISUAL SECTION
-
-# tmux coloring
-# Set the status line's colors
-set -g status-fg colour0
-set -g status-bg colour248
-
-# Active Pane Colors
-set -g window-style "bg=colour241, fg=colour253"
-set -g window-active-style "bg=colour235, fg=colour253"
-setw -g window-status-current-style "fg=colour234,bold,bg=colour253"
-
-####### END VISIAL SECTION
-
 
 
 ####### MOUSE SECTION
@@ -37,3 +23,31 @@ bind-key -T copy-mode-vi r send-keys -X rectangle-toggle
 
 #### Color Scheme
 #GruvBox
+source ~/.tmux/tmux.theme.gruvbox
+
+####### VISUAL SECTION
+# Status Bar on top
+set-option -g status-position top
+# Window list centralized
+# enable activity alerts
+setw -g monitor-activity on
+set -g visual-activity on
+
+# Battery Indicator
+set -g @batt_charged_icon " "
+set -g @batt_charging_icon " "
+set -g @batt_attached_icon " "
+set -g @batt_full_charge_icon " "
+set -g @batt_high_charge_icon " "
+set -g @batt_medium_charge_icon " "
+set -g @batt_low_charge_icon " "
+
+# Center the window list
+set -g status-justify centre
+
+####### END VISIAL SECTION
+
+##### PLUGINS
+run-shell ~/.tmux/plugins/tmux-battery/battery.tmux
+
+

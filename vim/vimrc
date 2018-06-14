@@ -35,6 +35,8 @@ set guifont=IBMPlexMono-Regular:h20
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set columns=80
+set colorcolumn=80
 set ttimeoutlen=50
 " access to system clipboard
 set clipboard=unnamed
@@ -48,8 +50,11 @@ nnoremap <space> za
 execute pathogen#infect()
 
 " Color Schema
-set background=dark 
+set background=dark
 colorscheme gruvbox
+
+" gruvbox opetions
+let g:gruvbox_contrast_dark = 'soft'
 
 " IndentLine options
 let g:indentLine_color_term = 236

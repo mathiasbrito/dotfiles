@@ -1,107 +1,28 @@
+# This tmux statusbar config was created by tmuxline.vim
+# on Di, 12 Jun 2018
 
-GRUVBOX_DARK_0_BG="#282828"
-GRUVBOX_DARK_8_GRAY="#928374"
-
-GRUVBOX_DARK_1_DARK_RED="#cc241d"
-GRUVBOX_DARK_9_LIGHT_RED="#fb4934"
-
-GRUVBOX_DARK_2_DARK_GREEN="#98971a"
-GRUVBOX_DARK_10_LIGHT_GREEN="#b8bb26"
-
-GRUVBOX_DARK_3_DARK_YELLOW="#d79921"
-GRUVBOX_DARK_11_LIGHT_YELLOW="#fabd2f"
-
-GRUVBOX_DARK_4_DARK_BLUE="#458588"
-GRUVBOX_DARK_12_LIGHT_BLUE="#83a598"
-
-GRUVBOX_DARK_5_DARK_PURPLE="#b16286"
-GRUVBOX_DARK_13_LIGHT_PURPLE="#d3869b"
-
-GRUVBOX_DARK_6_DARK_AQUA="#689d6a"
-GRUVBOX_DARK_14_LIGHT_AQUA="#8ec07c"
-
-GRUVBOX_DARK_7_GRAY="#a89984"
-GRUVBOX_DARK_15_FG="#ebdbb2"
-
-GRUVBOX_DARK_BG0_H="#1d2021"
-
-GRUVBOX_DARK_BG0="#282828"
-GRUVBOX_DARK_BG0_S="#32302f"
-
-GRUVBOX_DARK_BG1="#3c3836"
-GRUVBOX_DARK_FG4="#a89984"
-
-GRUVBOX_DARK_BG2="#504945"
-GRUVBOX_DARK_FG3="#bdae93"
-
-GRUVBOX_DARK_BG3="#665c54"
-GRUVBOX_DARK_FG2="#d5c4a1"
-
-GRUVBOX_DARK_BG4="#7c6f64"
-GRUVBOX_DARK_FG1="#ebdbb2"
-
-GRUVBOX_DARK_GRAY="#928374"
-GRUVBOX_DARK_FG0="#fbf1c7"
-
-GRUVBOX_DARK_DARK_ORANGE="#d65d0e"
-GRUVBOX_DARK_LIGHT_ORANGE="#fe8019"
-
- # 2}}}
-# COLORSCHEME: gruvbox dark
-set-option -g status "on"
-
-# default statusbar colors
-set-option -g status-bg colour237 #bg1
-set-option -g status-fg colour223 #fg1
-
-# default window title colors
-set-window-option -g window-status-bg colour214 #yellow
-set-window-option -g window-status-fg colour237 #bg1
-
-set-window-option -g window-status-activity-bg colour237 #bg1
-set-window-option -g window-status-activity-fg colour248 #fg3
-
-# active window title colors
-set-window-option -g window-status-current-bg default
-set-window-option -g window-status-current-fg colour237 #bg1
-
-# pane border
-set-option -g pane-active-border-fg colour250 #fg2
-set-option -g pane-border-fg colour237 #bg1
-
-# message infos
-set-option -g message-bg colour239 #bg2
-set-option -g message-fg colour223 #fg1
-
-# writting commands inactive
-set-option -g message-command-bg colour239 #fg3
-set-option -g message-command-fg colour223 #bg1
-
-# pane number display
-set-option -g display-panes-active-colour colour250 #fg2
-set-option -g display-panes-colour colour237 #bg1
-
-# clock
-set-window-option -g clock-mode-colour colour109 #blue
-
-# bell
-set-window-option -g window-status-bell-style fg=colour235,bg=colour167 #bg, red
-
-
-## Theme settings mixed with colors (unfortunately, but there is no cleaner way)
-set-option -g status-attr "none"
-set-option -g status-justify "left"
-set-option -g status-left-attr "none"
-set-option -g status-left-length "80"
-set-option -g status-right-attr "none"
-set-option -g status-right-length "80"
-set-window-option -g window-status-activity-attr "none"
-set-window-option -g window-status-attr "none"
-set-window-option -g window-status-separator ""
-
-set-option -g status-left "#[fg=colour248, bg=colour241] #S #[fg=colour241, bg=colour237, nobold, noitalics, nounderscore]"
-set-option -g status-right "#[fg=colour239, bg=colour237, nobold, nounderscore, noitalics]#[fg=colour246,bg=colour239] %Y-%m-%d %H:%M #[fg=colour248, bg=colour239, nobold, noitalics, nounderscore]#[fg=colour237, bg=colour248] #h "
-
-set-window-option -g window-status-current-format "#[fg=colour239, bg=colour248, :nobold, noitalics, nounderscore]#[fg=colour239, bg=colour223] #I #[fg=colour239, bg=colour223, bold] #W #[fg=colour214, bg=colour223, nobold, noitalics, nounderscore]"
-set-window-option -g window-status-format "#[fg=colour237,bg=colour239,noitalics]#[fg=colour223,bg=colour239] #I#[fg=colour223, bg=colour239] #W #[fg=colour239, bg=colour237, noitalics]"
-
+set -g status-justify "left"
+set -g status "on"
+set -g status-attr "none"
+set -g message-command-bg "colour239"
+set -g status-left-length "100"
+set -g pane-active-border-fg "colour246"
+set -g status-bg "colour237"
+set -g message-command-fg "colour246"
+set -g pane-border-fg "colour239"
+set -g message-bg "colour239"
+set -g status-left-attr "none"
+set -g status-right-attr "none"
+set -g status-right-length "100"
+set -g message-fg "colour246"
+setw -g window-status-fg "colour246"
+setw -g window-status-attr "none"
+setw -g window-status-activity-bg "colour237"
+setw -g window-status-activity-attr "none"
+setw -g window-status-activity-fg "colour246"
+setw -g window-status-separator ""
+setw -g window-status-bg "colour237"
+set -g status-left "#[fg=colour235,bg=colour246]    #S #[fg=colour246,bg=colour237,nobold,nounderscore,noitalics]"
+set -g status-right "#[fg=colour239,bg=colour237,nobold,nounderscore,noitalics]#[fg=colour246,bg=colour239]   %A %d.%m.%Y    %H:%M %p #[fg=colour246,bg=colour239,nobold,nounderscore,noitalics]  #{battery_status_fg} #{battery_percentage} #{battery_icon} #[fg=colour246,bg=colour239] #[fg=colour239,bg=colour246]  #(sysctl vm.loadavg | awk '{print $3}') ﱨ  #[fg=colour254,bg=colour246]#[fg=colour239,bg=colour254]  #h   "
+setw -g window-status-format "#[fg=colour246,bg=colour237] #I #[fg=colour246,bg=colour237] #W "
+setw -g window-status-current-format "#[fg=colour237,bg=colour239,nobold,nounderscore,noitalics]#[fg=colour246,bg=colour239] #I #[fg=colour246,bg=colour239] #W #[fg=colour239,bg=colour237,nobold,nounderscore,noitalics]"

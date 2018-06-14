@@ -65,6 +65,13 @@ fi
 ln -s ${CURRENT_DIR}/bashrc.sh $HOME/.bashrc
 ######
 
+# ZSH
+
+if [ -f $HOME/.zshrc ]; then
+    mv $HOME/.zshrc $HOME/.zshrc.ori
+fi
+ln -s ${CURRENT_DIR}/zshrc $HOME/.zshrc
+
 # VIM
 if [ -d $HOME/.vim ]; then
     mv $HOME/.vim $HOME/.vim.ori
@@ -76,33 +83,33 @@ ln -s ${CURRENT_DIR}/vim $HOME/.vim
 
 
 ### VIM ADDONS ####
-# istall plugin manager Pathogen
+# Install plugin manager Pathogen
 git clone https://github.com/tpope/vim-pathogen.git /tmp/pathogen
 cp -rip /tmp/pathogen/autoload ./vim
 mkdir ./vim/bundle
 
-# Powerline
-pip install --user git+git://github.com/powerline/powerline
+# Powerlevel9k
 mkdir -p $HOME/.config/fontconfig/conf.d/
-mkdir -p $HOME/.config/powerline
-ln -s $CURRENT_DIR/powerline-config $HOME/.config/powerline
 cp ./powerline/font/10-powerline-symbols.conf $HOME/.config/fontconfig/conf.d
+git clone https://github.com/bhilburn/powerlevel9k.git $HOME/.powerlevel9k
 
-#Color Schemes
-git clone https://github.com/morhetz/gruvbox.git .vim/bundle/gruvbox
+# TMUX Plugins
+mkdir -p $HOME/.tmux/plugins
+git clone https://github.com/tmux-plugins/tmux-battery $HOME/.tmux/plugins/tmux-battery
 
-#Plugins
-git clone https://github.com/Yggdroot/indentLine.git ./vim/bundle/indentline
-git clone https://github.com/tpope/vim-fugitive.git ./vim/bundle/fugitive
-git clone https://github.com/airblade/vim-gitgutter ./vim/bundle/vim-gutter
-git clone https://github.com/scrooloose/nerdtree.git ./vim/bundle/nerdtree
-git clone https://github.com/w0rp/ale.git ./vim/bundle/ale
+# VIM Plugins
+git clone https://github.com/Yggdroot/indentLine.git vim/bundle/indentline
+git clone https://github.com/tpope/vim-fugitive.git vim/bundle/fugitive
+git clone https://github.com/airblade/vim-gitgutter vim/bundle/vim-gutter
+git clone https://github.com/scrooloose/nerdtree.git vim/bundle/nerdtree
+git clone https://github.com/w0rp/ale.git vim/bundle/ale
 git clone https://github.com/junegunn/fzf.git vim/bundle/fzf
 git clone https://github.com/junegunn/fzf.vim.git vim/bundle/fzf.vim
 git clone https://github.com/itchyny/lightline.vim.git vim/bundle/lightline
 git clone https://github.com/tpope/vim-surround.git vim/bundle/surround
 git clone https://github.com/WolfgangMehner/bash-support.git vim/bundle/bash-support
 git clone https://github.com/Valloric/YouCompleteMe.git vim/bundle/YouCompleteMe
+git clone https://github.com/vim-airline/vim-airline vim/bundle/vim-airline
 cd vim/bundle/YouCompleteMe; git submodule update --init --recursive; ./install.py; cd -;
 
 
