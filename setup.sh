@@ -110,6 +110,7 @@ git clone https://github.com/tpope/vim-surround.git vim/bundle/surround
 git clone https://github.com/WolfgangMehner/bash-support.git vim/bundle/bash-support
 git clone https://github.com/Valloric/YouCompleteMe.git vim/bundle/YouCompleteMe
 git clone https://github.com/vim-airline/vim-airline vim/bundle/vim-airline
+git clone https://github.com/rhysd/vim-grammarous.git vim/bundle/vim-grammarous
 cd vim/bundle/YouCompleteMe; git submodule update --init --recursive; ./install.py; cd -;
 
 

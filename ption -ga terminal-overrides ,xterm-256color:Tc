@@ -1,0 +1,65 @@
+[1mdiff --git a/custom_powerlevel9k.zsh-theme b/custom_powerlevel9k.zsh-theme[m
+[1mindex e15a7af..e6c84a8 100644[m
+[1m--- a/custom_powerlevel9k.zsh-theme[m
+[1m+++ b/custom_powerlevel9k.zsh-theme[m
+[36m@@ -36,7 +36,7 @@[m [mPOWERLEVEL9K_STATUS_VERBOSE=true[m
+ POWERLEVEL9K_STATUS_CROSS=true[m
+ POWERLEVEL9K_PROMPT_ADD_NEWLINE=true[m
+ [m
+[31m-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(user virtualenv vcs newline root_indicator context dir_writable dir) [m
+[32m+[m[32mPOWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(vi_mode user virtualenv vcs newline root_indicator context dir_writable dir)[m[41m [m
+ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(command_execution_time background_jobs status ssh)[m
+ [m
+ [m
+[1mdiff --git a/tmux/tmux.conf.common b/tmux/tmux.conf.common[m
+[1mindex d7afb72..6e5a630 100644[m
+[1m--- a/tmux/tmux.conf.common[m
+[1m+++ b/tmux/tmux.conf.common[m
+[36m@@ -15,9 +15,11 @@[m [mset -g default-terminal "screen-256color"[m
+ set -g history-limit 10000[m
+ setw -g mode-keys vi[m
+ [m
+[31m-bind-key -T copy-mode-vi v send-keys -X begin-selection[m
+[31m-bind-key -T copy-mode-vi y send-keys -X copy-selection[m
+[31m-bind-key -T copy-mode-vi r send-keys -X rectangle-toggle[m
+[32m+[m[32msetw -g mode-keys vi[m
+[32m+[m[32mbind-key -t vi-copy v begin-selection[m
+[32m+[m[32mbind-key -t vi-copy y copy-pipe "pbcopy"[m
+[32m+[m[32munbind -t vi-copy Enter[m
+[32m+[m[32mbind-key -t vi-copy Enter copy-pipe "pbcopy"[m
+ [m
+ ####### END BEHAVIORAL SECTION[m
+ [m
+[1mdiff --git a/tmux/tmux.conf.mac b/tmux/tmux.conf.mac[m
+[1mindex 708d94c..2624df6 100644[m
+[1m--- a/tmux/tmux.conf.mac[m
+[1m+++ b/tmux/tmux.conf.mac[m
+[36m@@ -8,4 +8,5 @@[m [mset -g default-terminal "xterm-256color"[m
+ # Apply Tc[m
+ set-option -ga terminal-overrides ",xterm-256color:Tc"[m
+ [m
+[31m-[m
+[32m+[m[32m# Share Clipboard[m
+[32m+[m[32mset-option -g default-command "reattach-to-user-namespace -l zsh"[m
+[1mdiff --git a/vim/vimrc b/vim/vimrc[m
+[1mindex e6a8db6..13d9939 100644[m
+[1m--- a/vim/vimrc[m
+[1m+++ b/vim/vimrc[m
+[36m@@ -23,7 +23,7 @@[m [mset incsearch		" Incremental search[m
+ "set autowrite		" Automatically save before commands like :next and :make[m
+ "set hidden		" Hide buffers when they are abandoned[m
+ set mouse=a	" Enable mouse usage (all modes)[m
+[31m-"set number[m
+[32m+[m[32mset number[m
+ [m
+ " Source a global configuration file if available[m
+ "if filereadable("/etc/vim/vimrc.local")[m
+[36m@@ -78,7 +78,7 @@[m [mmap <C-d>f :ALEFix<CR>[m
+ map <C-n> :NERDTreeToggle<CR>[m
+ [m
+ " fzf.vim related[m
+[31m-map f :Files<CR>[m
+[32m+[m[32mmap <F2> :Files<CR>[m
+ [m
+ " lightline.vim relate[m
+ set laststatus=2[m

@@ -18,6 +18,7 @@ if [ "$PLATFORM_OS" = "Darwin" ]; then
         alias ls="gls -F --color"
         alias ll="ls -lF --color"
     fi
+    alias icloud='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs'
 else
     # Aliases
     alias ll="ls -lF --color"

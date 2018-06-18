@@ -15,9 +15,7 @@ set -g default-terminal "screen-256color"
 set -g history-limit 10000
 setw -g mode-keys vi
 
-bind-key -T copy-mode-vi v send-keys -X begin-selection
-bind-key -T copy-mode-vi y send-keys -X copy-selection
-bind-key -T copy-mode-vi r send-keys -X rectangle-toggle
+setw -g mode-keys vi
 
 ####### END BEHAVIORAL SECTION
 
