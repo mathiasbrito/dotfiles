@@ -98,6 +98,8 @@ mkdir -p $HOME/.tmux/plugins
 git clone https://github.com/tmux-plugins/tmux-battery $HOME/.tmux/plugins/tmux-battery
 
 # VIM Plugins
+git clone https://github.com/SirVer/ultisnips.git vim/bundle/ultisnips
+git clone https://github.com/honza/vim-snippets.git vim/bundle/vimsnippets
 git clone https://github.com/Yggdroot/indentLine.git vim/bundle/indentline
 git clone https://github.com/tpope/vim-fugitive.git vim/bundle/fugitive
 git clone https://github.com/airblade/vim-gitgutter vim/bundle/vim-gutter
